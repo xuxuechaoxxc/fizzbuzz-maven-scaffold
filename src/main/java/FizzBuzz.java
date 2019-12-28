@@ -1,22 +1,36 @@
 public class FizzBuzz {
-
-    public static String exc(int i) {
-        String result;
-        if (i % 3 == 0) {
-            if (i % 5 == 0) {
-                result = "FizzBuzz";
-            } else {
-                result = "Fizz";
-            }
-            return result;
+    public static String of(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("Invalid input");
         }
 
-        if (i % 5 == 0) {
+        if (number % 3 == 0 && number % 5 == 0 && number % 7 == 0) {
+            return "FizzBuzzWhizz";
+        }
+
+        if (number % 3 == 0 && number % 5 == 0) {
+            return "FizzBuzz";
+        }
+
+        if (number % 3 == 0 && number % 7 == 0) {
+            return "FizzWhizz";
+        }
+
+        if (number % 5 == 0 && number % 7 == 0) {
+            return "BuzzWhizz";
+        }
+
+        if (number % 3 == 0) {
+            return "Fizz";
+        }
+
+        if (number % 5 == 0) {
             return "Buzz";
         }
-        return i + "";
+
+        if (number % 7 == 0) {
+            return "Whizz";
+        }
+        return String.valueOf(number);
     }
-
-
-
 }

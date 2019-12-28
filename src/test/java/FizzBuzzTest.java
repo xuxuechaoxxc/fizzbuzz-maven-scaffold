@@ -1,29 +1,34 @@
 import org.junit.Test;
-import static org.fest.assertions.api.Assertions.assertThat;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
+
+@RunWith(Parameterized.class)
 public class FizzBuzzTest {
+    private int number;
+    private String expectedResult;
 
-
-    @Test
-    public void test1() {
-        String result = FizzBuzz.exc(1);
-        assertThat(result).isEqualTo("1");
-    }
-    @Test
-    public void test3() {
-        String result = FizzBuzz.exc(3);
-        assertThat(result).isEqualTo("Fizz");
-    }
-    @Test
-    public void test5() {
-        String result = FizzBuzz.exc(5);
-        assertThat(result).isEqualTo("Buzz");
-    }
-    @Test
-    public void test15() {
-        String result = FizzBuzz.exc(15);
-        assertThat(result).isEqualTo("FizzBuzz");
+    public FizzBuzzTest(int number, String expectedResult) {
+        this.number = number;
+        this.expectedResult = expectedResult;
     }
 
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{
+                {1, "1"},
+                {3, "Fizz"},
+                {5, "Buzz"},
+                {15, "FizzBuzz"}
+        });
+    }
 
+    @Test
+    public void test() {
+        assertEquals(expectedResult, FizzBuzz.of(number));
+    }
 }

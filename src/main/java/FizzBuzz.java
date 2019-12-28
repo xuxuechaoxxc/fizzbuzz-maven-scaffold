@@ -7,9 +7,11 @@ public class FizzBuzz {
         }
         if (i % 3 == 0) {
             return "Fizz";
-        }else {
-            return null;
         }
+        if (i % 5 == 0) {
+            return "Buzz";
+        }
+        return null;
     }
 
 }

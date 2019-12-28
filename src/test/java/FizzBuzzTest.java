@@ -6,7 +6,7 @@ public class FizzBuzzTest {
 
     @Test
     public void test1() {
-        String result = FizzBuzz.exc(3);
+        String result = FizzBuzz.exc(1);
         assertThat(result).isEqualTo("1");
     }
     @Test

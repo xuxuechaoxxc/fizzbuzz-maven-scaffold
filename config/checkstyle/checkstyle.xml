@@ -166,7 +166,7 @@
         </module>
         <!-- return个数 3个-->
         <module name="ReturnCount">
-            <property name="max" value="3"/>
+            <property name="max" value="8"/>
         </module>
         <!--try catch 异常处理数量 3-->
         <module name="NestedTryDepth ">

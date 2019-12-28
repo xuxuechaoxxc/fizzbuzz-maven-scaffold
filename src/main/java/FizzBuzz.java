@@ -10,8 +10,10 @@ public class FizzBuzz {
         }
         if (i % 5 == 0) {
             return "Buzz";
+        }else {
+            return null;
         }
-        return null;
+
     }
 
 }
